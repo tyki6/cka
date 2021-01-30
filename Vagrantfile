@@ -18,8 +18,8 @@ Vagrant.configure("2") do |config|
       sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config    
       service ssh restart
     SHELL
-    kmaster.vm.provision "shell", path: "install_common.sh"
-    kmaster.vm.provision "shell", path: "install_master.sh"
+    kmaster.vm.provision "shell", path: "scripts/install_common.sh"
+    kmaster.vm.provision "shell", path: "scripts/install_master.sh"
   end
 
   numberSrv=2
@@ -38,8 +38,8 @@ Vagrant.configure("2") do |config|
         sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config    
         service ssh restart
       SHELL
-      knode.vm.provision "shell", path: "install_common.sh"
-      knode.vm.provision "shell", path: "install_node.sh"
+      knode.vm.provision "shell", path: "scripts/install_common.sh"
+      knode.vm.provision "shell", path: "scripts/install_node.sh"
     end
   end
 end
