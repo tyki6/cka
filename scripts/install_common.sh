@@ -26,7 +26,6 @@ apt-get install -y -qq apt-transport-https curl >/dev/null
 echo "[4]: install docker if not exist"
 if [ ! -f "/usr/bin/docker" ];then
 curl -s -fsSL https://get.docker.com | sh;
-
 fi
 
 echo "[5]: add kubernetes repository to source.list"
@@ -38,6 +37,6 @@ apt-get update -qq >/dev/null
 
 echo "[6]: install kubelet / kubeadm / kubectl / kubernetes-cni"
 apt-get install -y -qq kubelet kubeadm kubectl kubernetes-cni >/dev/null
-
+sudo chown -R $USER $HOME/.kube
 
 echo "END - install common - " $IP

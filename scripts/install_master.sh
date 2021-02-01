@@ -18,7 +18,7 @@ mkdir $HOME/.kube
 cp /etc/kubernetes/admin.conf $HOME/.kube/config
 
 echo "[3]: create flannel pods network"
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be0084506e4ec919aa1c114638878db11b/Documentation/kube-flannel.yml
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
 echo "[4]: restart and enable kubelet"
 systemctl enable kubelet
