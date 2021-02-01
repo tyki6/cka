@@ -38,6 +38,9 @@ alias kgs='kubectl get services'
 alias ksgp='kubectl get pods -n kube-system'
 alias kuc='kubectl config use-context'
 ```
+## shortcut
+- service: svc
+- deployment: deploy
 
 # Connect To your cluster
 ```
