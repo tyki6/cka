@@ -41,7 +41,7 @@ alias kuc='kubectl config use-context'
 ## shortcut
 - service: svc
 - deployment: deploy
-
+- namespace: ns
 # Connect To your cluster
 ```
 vagrant ssh kmaster -c "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
