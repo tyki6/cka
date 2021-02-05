@@ -15,7 +15,12 @@ kubectl get nodes
 # check pod name
 kubectl exec -it nginx-XXXXXXXXXX-XXXXX /bin/bash
 ```
-
+# Go inside container
+```
+kubectl get nodes
+# check pod name
+kubectl exec -it nginx-XXXXXXXXXX-XXXXX -c mycontainer /bin/bash
+```
 # Deploy with yaml
 ```
 cat mondeploy.yaml monservice.yaml > nginx.yaml
