@@ -46,6 +46,7 @@ alias kuc='kubectl config use-context'
 - persistent volume claim: pvc
 - replicaset: rs
 - statefulset: sts
+- CertificateSigningRequest :csr
 # Connect To your cluster
 ```
 vagrant ssh kmaster -c "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
