@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  labels:
+    app: nginx
+spec:
+  imagePullSecrets:
+    - name: private-reg-cred
+  containers:
+    - name: web
+      image: nginx
