@@ -38,3 +38,5 @@ kubectl logs nginx
 kubectl get events
 kubectl get events nginx
 ``` 
+
+# ControlePane
