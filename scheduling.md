@@ -113,6 +113,7 @@ Shortcut for kubernetes: **ds**
 Documentation: [here](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 # Static Pods
 All Static pods are located in pod-manifest directory path of this directory is described on kubelet.service or in kubeconfig.yaml with staticPodPath
+Path: /etc/kubernetes/manifests
 Documentation: [here](https://kubernetes.io/docs/tasks/configure-pod-container/static-pod/)
 ## DaemonSet Vs Static Pods
 static pods are created by kubelet, it's used to deploy control Plane components as static pods
