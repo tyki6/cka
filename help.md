@@ -1,10 +1,22 @@
+# Help
+# Table Of Contents
+- [Kubernetes keyword](#kubernetes)
+- [Service](#service)
+- [Liveness & Readiness](#liveness--readiness)
+- [Example](#example)
+- [Volume](#volume)
+- [Replicatset](#replicaset)
+- [Config Map](#config-map)
+- [Secrets](#secrets)
+- [Deployment](#deployment)
+- [Rollout](#rollout)
+- [StatefullSet](#statefulset)
 # Kubernetes
-
 - pod: 1 or many docker
 - deployment: 1 or many pods(conf)
 - service: access to pods
 - daemonsets: pods running in background
-- namespace: group of pods
+- namespace: 
 - context: profil
 - label: in kubernetes (selector)
 - annotation: out kubernetes 
@@ -13,7 +25,7 @@
 - persistent volume
 - replicaset: Type of deployment, instance fix of pods
 - configmap: configuration file
-
+- storageclass:
 # Service
 - nodeport: redirect to public port (range 30000-32767)
 - clusterip: internal
@@ -37,7 +49,7 @@
 - httpHeaders
 - port
 # Example 
-```
+```yaml
 readinessProbe:
   httpGet:
     path: /monitoring/alive
@@ -54,7 +66,6 @@ livenessProbe:
     periodSeconds: 15
 
 ```
-
 # Volume
 ## types
 - emptyDir: no persistent, share between pods
@@ -70,7 +81,6 @@ pv > pvc > pods
 - ReadWriteOnce
 - ReadOnlyMany
 - ReadWriteMany
-
 # ReplicaSet
 - spec
  - replicas: int
@@ -83,13 +93,11 @@ pv > pvc > pods
  - spec
  
 If you delete one pods, new pods will be recreate.
-
 # Config Map
-
 ## CLi
 - --from-literal: enter key value in ci
 - --from-file: get file
-```
+```shell
 kubectl create configmap langue --from-literal=LANGUE=FR
 kubectl get configmaps langue
 kubectl describe configmaps langue
@@ -138,16 +146,14 @@ spec:
 ## CLi
 - --from-literal: enter key value in ci
 - --from-file: get file
-```
+```shell
 kubectl create secrets mypasword --from-literal=LANGUE=FR
 kubectl get secrets mypasword
 kubectl describe secrets mypasword
 ```
 ### Edit
 `kubectl edit secrets langue`
-
-# Deployment 
-
+# Deployment
 ## Rolling Update
 ```yaml
 strategy:
@@ -160,11 +166,9 @@ other parameters:
 - minReadySeconds
 - progressDeadLineSeconds: deployment time max else deployment will fail
 - revisionHistoryLimit: history length
-
 # Rollout
 `kubectl rollout status deployments`
 `kubectl rollout history deployment`
 `kubectl rollout undo deployment --to-revision 2`
-
 # StatefulSet
 for bdd or app that need persistence
