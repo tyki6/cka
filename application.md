@@ -54,6 +54,7 @@ A ConfigMap is an API object used to store non-confidential data in key-value pa
 commands:
 `kubectl create configmap test --from-literal=MY_KEY=MY_VALUE`
 Example: [here](templates/configmap.yaml)
+
 Documentation: [here](https://kubernetes.io/docs/concepts/configuration/configmap/)
 # Secrets 
 Kubernetes Secrets let you store and manage sensitive information, such as passwords, OAuth tokens, and ssh keys.

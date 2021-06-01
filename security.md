@@ -1,16 +1,16 @@
 # Security
-**all certificate path locate in /etc/kubernetes/manifests/**
+**All certificate path locate in /etc/kubernetes/manifests/**
 # Table of Contents
 - [Read Certificate](#read-certificate)
 - [CertificateSigningRequest](#certificatesigningrequest)
 - [Security Context](#security-context)
 - [Image Registry](#image-registry)
 # Read Certificate
-`openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text`
-CA = CN Issuer
-CN = CN Suject
-CA = server certificate
-certfile = client certificate
+`openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text`:
+- CA = CN Issuer
+- CN = CN Suject
+- CA = server certificate
+- certfile = client certificate
 # CertificateSigningRequest
 Full example: [here](templates/certificatesigningRequest.yaml)
 

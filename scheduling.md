@@ -28,7 +28,7 @@ See: [binding.yaml](templates/binding.yaml)
 Tolerations are applied to pods, and allow (but do not require) the pods to schedule onto nodes with matching taints.
 Documentation: [here](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
 ## Command
-kubectl taint node NAME KEY_1=VAL_1:TAINT_EFFECT_1 ... KEY_N=VAL_N:TAINT_EFFECT_N
+`kubectl taint node NAME KEY_1=VAL_1:TAINT_EFFECT_1 ... KEY_N=VAL_N:TAINT_EFFECT_N`
 ## Taint Effect
 - NoSchedule: no pod will be able to schedule onto node
 - PreferNoSchedule: soft version of NoSchedule, he system will try to avoid placing a pod that does not tolerate the taint on the node, but it is not required.
@@ -78,6 +78,7 @@ affinity:
             - test2
 ````
 Full Example: [here](templates/node-affinity.yaml)
+
 Documentation: [here](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity)
 # Resource Requirements & Limits
 Documentation: [here](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
@@ -110,10 +111,12 @@ Some typical uses of a DaemonSet are:
 
 Shortcut for kubernetes: **ds**
 [minimal template for DaemonSet](./templates/daemonset.yaml)
+
 Documentation: [here](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 # Static Pods
 All Static pods are located in pod-manifest directory path of this directory is described on kubelet.service or in kubeconfig.yaml with staticPodPath
 Path: /etc/kubernetes/manifests
+
 Documentation: [here](https://kubernetes.io/docs/tasks/configure-pod-container/static-pod/)
 ## DaemonSet Vs Static Pods
 static pods are created by kubelet, it's used to deploy control Plane components as static pods

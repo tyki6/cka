@@ -48,7 +48,7 @@ kubectl get nodes
 # go inside pod
 kubectl exec -it nginx-XXXXXXXXXX-XXXXX /bin/bash
 # exec command on pod
-kubectl exit nginx -- cat /var/log.log
+kubectl exec nginx -- cat /var/log.log
 ```
 
 # Go inside container
